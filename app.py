@@ -48,7 +48,7 @@ df=df[(df['Gross_RM_WriteOff_value']>limit)]
 df=df.loc[(df.SBU == "FF")]
 
 grouper = df.groupby(['ItemCode','Itemgroup','Prodgroup','BuyerDivision','Description','Colur_Size','Plant'])
-df =grouper['Production_Savings_Requirement_vs_ConsumptionValue','Quantity'].sum().reset_index()
+df =grouper[['Production_Savings_Requirement_vs_ConsumptionValue','Quantity']].sum().reset_index()
 df=df[(df['Production_Savings_Requirement_vs_ConsumptionValue']>limit)]
 
 df_final = df=df[(df['Production_Savings_Requirement_vs_ConsumptionValue']>100)]
