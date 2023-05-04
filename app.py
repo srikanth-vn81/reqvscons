@@ -58,7 +58,7 @@ df_final.sort_values("Production_Savings_Requirement_vs_ConsumptionValue", axis=
 
 df_final['systemdate']=date.today()
 df_final['systemdate']= pd.to_datetime(df_final["systemdate"])
-df_final['weekno'] = df_final['systemdate'].dt.week
+df_final['weekno'] = df_final['systemdate'].dt.isocalendar().week
 st.write(df_final)
 
 #from st_aggrid import GridUpdateMode, DataReturnMode
